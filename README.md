@@ -5,7 +5,7 @@ Task Manager is a simple application built with Node.js, Express, MongoDB, and D
 ## Features
 
 - **Create a Task**: Add new tasks with a title, description, deadline, and status.
-- **Read Tasks**: View all tasks.
+- **Read Tasks**: View all tasks or a specific task.
 - **Update a Task**: Modify the details of a task, including its status.
 - **Delete a Task**: Remove a task from the task list.
 - **Dockerized**: The application runs seamlessly using Docker, making it easy to set up and deploy.
@@ -48,7 +48,7 @@ Task Manager is a simple application built with Node.js, Express, MongoDB, and D
 
 ## API Endpoints
 1. **Create a Task**
-    * URL: `/api/tasks`
+    * URL: `/api/task`
 
     * Method: `POST`
 
@@ -70,7 +70,7 @@ Task Manager is a simple application built with Node.js, Express, MongoDB, and D
         * 400: Bad request, missing required fields.
 
 2. **Get All Tasks**
-    * URL: `/api/tasks`
+    * URL: `/api/task`
 
     * Method: `GET`
 
@@ -81,8 +81,20 @@ Task Manager is a simple application built with Node.js, Express, MongoDB, and D
         * 200: Returns an array of tasks.
         * 500: Internal error.
 
-3. **Update a Task**
-    * URL: `/api/tasks/:id`
+3. **Get a specific task**
+    * URL: `/api/task/:id`
+
+    * Method: `GET`
+
+    * Description: Retrieve a specific task.
+
+    * Response:
+
+        * 200: Returns a specific task.
+        * 404: Task not found.
+
+4. **Update a Task**
+    * URL: `/api/task/:id`
 
     * Method: `PUT`
 
@@ -102,8 +114,8 @@ Task Manager is a simple application built with Node.js, Express, MongoDB, and D
         * 200: Task updated successfully.
         * 404: Task not found.
 
-4. **Delete a Task**
-    * URL: `/api/tasks/:id`
+5. **Delete a Task**
+    * URL: `/api/task/:id`
 
     * Method: `DELETE`
 

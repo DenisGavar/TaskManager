@@ -8,7 +8,7 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use("/api/tasks", taskRoutes);
+app.use("/api/task", taskRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
